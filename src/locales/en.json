@@ -1,0 +1,34 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "about_us": "About Us",
+    "our_team": "Our Team",
+    "project_overview": "Project Overview",
+    "opportunities": "Opportunities",
+    "investment_opportunities": "Investment Opportunities",
+    "progress_updates": "Progress Updates",
+    "resources": "Resources",
+    "knowledge_center": "Knowledge Center",
+    "doctor_voices": "Doctor Voices",
+    "contact": "Contact",
+    "contact_inquiry": "Contact & Inquiry",
+    "invest_button": "Interested in Investing?"
+  },
+  "hero": {
+    "title_line1": "A World-Class University Hospital",
+    "title_line2": "in the Heart of Peshawar",
+    "subtitle": "Join us in building a healthier future for Khyber Pakhtunkhwa. Discover a landmark project designed for impact and sustainable growth.",
+    "button_vision": "Watch Our Vision",
+    "button_invest": "Explore Investment"
+  },
+  "footer": {
+    "newsletter_title": "Stay Updated",
+    "newsletter_subtitle": "Subscribe to our newsletter for the latest project updates, investment insights, and health news.",
+    "subscribe_button": "Subscribe",
+    "quick_links": "Quick Links",
+    "resources": "Resources",
+    "contact_info": "Contact Info",
+    "project_description": "Pioneering healthcare and education in Peshawar for a healthier tomorrow."
+  }
+}

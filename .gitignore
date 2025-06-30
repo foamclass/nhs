@@ -1,0 +1,44 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+out/
+.next/
+
+# Environment files
+.env
+.env.*
+.env.production.example
+
+# Python (if any)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+
+# Mac system files
+Icon?
+
+# Screenshots (optional, remove if you want to keep in repo)
+Screenshots/
+
+# Ignore environment and build-related files
+.qodo/
