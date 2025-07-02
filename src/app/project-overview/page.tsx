@@ -1,7 +1,6 @@
 import Image from "next/image";
 import PageHeader from "@/components/sections/page-header";
 import FaqSection from "@/components/sections/faq-section";
-import InteractiveMap from "@/components/common/interactive-map";
 import { ScrollFadeIn } from "@/components/common/scroll-fade-in";
 import { School, Users, MapPin, TestTube2, BriefcaseMedical } from "lucide-react"; // Example icons
 
@@ -100,7 +99,18 @@ export default function ProjectOverviewPage() {
           </ScrollFadeIn>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <ScrollFadeIn delay="0ms" className="rounded-xl shadow-xl overflow-hidden aspect-video">
-              <InteractiveMap />
+              <div className="aspect-video rounded-lg overflow-hidden shadow-md border">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.95862530477!2d71.52232531521727!3d34.01510098062191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d917b82dad5555%3A0x95A0A5527E0F45A2!2sPeshawar%20Ring%20Rd%2C%20Peshawar%2C%20Khyber%20Pakhtunkhwa%2C%20Pakistan!5e0!3m2!1sen!2s!4v1694000000000!5m2!1sen!2s" 
+                  width="100%" 
+                  height="100%" 
+                  style={{border:0}} 
+                  allowFullScreen={false} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Project Location Map"
+                ></iframe>
+              </div>
             </ScrollFadeIn>
             <ScrollFadeIn delay="200ms" className="space-y-6 bg-card p-8 rounded-xl shadow-lg">
               <div className="flex items-start gap-4">

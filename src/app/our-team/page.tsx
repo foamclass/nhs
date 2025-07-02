@@ -49,10 +49,28 @@ const chairman: DoctorProfile = {
   aiHint: "male doctor portrait"
 };
 
+const ceo: DoctorProfile = {
+  name: "Dr. Faiz-ur-Rahman",
+  role: "Chief Executive Officer (CEO)",
+  specialty: "Medicine / Diabetes",
+  title: "CEO, Consultant Physician & Diabetologist",
+  experience: "22+ years",
+  education: "MBBS, FCPS (Medicine) – Dow University",
+  languages: "English, Urdu",
+  bio: "Dr. Faiz-ur-Rahman is the CEO of Noble Health Services and a leading consultant in internal medicine and diabetes care. With over two decades of experience, he is dedicated to advancing patient-centered healthcare and innovative diabetes management in Pakistan. His leadership is marked by a commitment to clinical excellence, compassionate care, and continuous improvement in medical services.",
+  location: "NHS Diabetes Center, Peshawar",
+  timings: "Tue–Sat, 9AM–1PM",
+  contact: { phone: "+92-345-4433221", email: "dr.faiz@nhs.pk" },
+  consultationType: "In-person, Online",
+  proceduresPerformed: "Diabetes Management, Endocrine Disorders, Hypertension Treatment",
+  insuranceAccepted: "Sehat Card, Private Insurers",
+  imageUrl: "https://placehold.co/150x150.png?text=Dr.+Faiz",
+  aiHint: "doctor portrait"
+};
+
 const specialists: DoctorProfile[] = [
     { name: "Dr. Nasir Saeed", specialty: "Ophthalmology", title: "Consultant Ophthalmologist", experience: "20+ years", education: "MBBS, DOMS – Peshawar Medical College", languages: "English, Urdu", bio: "Expert in medical and surgical care of the eyes and visual system.", location: "NHS Eye Center, Peshawar", timings: "Mon–Sat, 10AM–3PM", contact: { phone: "+92-300-7654321", email: "dr.nasir@nhs.pk" }, consultationType: "In-person", proceduresPerformed: "Cataract Surgery, Laser Vision Correction, Glaucoma Treatment", insuranceAccepted: "Sehat Card, Allied Insurance", imageUrl: "https://placehold.co/100x100.png?text=Dr.+Nasir", aiHint: "doctor portrait" },
     { name: "Dr. Muhammad Aqeel Khan", specialty: "Pediatric Medicine", title: "Consultant Pediatrician", experience: "15+ years", education: "MBBS, FCPS (Pediatrics) – Quaid-e-Azam Medical College", languages: "English, Urdu", bio: "Focuses on medical care for infants, children, and adolescents, treating both common and complex childhood illnesses.", location: "NHS Pediatric Wing, Peshawar", timings: "Mon–Fri, 11AM–4PM", contact: { phone: "+92-331-1122334", email: "dr.aqeel@nhs.pk" }, consultationType: "In-person", proceduresPerformed: "Vaccination, Acute Illness Management, Developmental Screening", insuranceAccepted: "NHS Health Plan, Sehat Sahulat", imageUrl: "https://placehold.co/100x100.png?text=Dr.+Aqeel", aiHint: "pediatrician portrait" },
-    { name: "Dr. Faiz-ur-Rahman", specialty: "Medicine / Diabetes", title: "Consultant Physician & Diabetologist", experience: "22+ years", education: "MBBS, FCPS (Medicine) – Dow University", languages: "English, Urdu", bio: "Specialist in internal medicine with a focus on managing diabetes and related metabolic conditions.", location: "NHS Diabetes Center, Peshawar", timings: "Tue–Sat, 9AM–1PM", contact: { phone: "+92-345-4433221", email: "dr.faiz@nhs.pk" }, consultationType: "In-person, Online", proceduresPerformed: "Diabetes Management, Endocrine Disorders, Hypertension Treatment", insuranceAccepted: "Sehat Card, Private Insurers", imageUrl: "https://placehold.co/100x100.png?text=Dr.+Faiz", aiHint: "doctor portrait" },
     { name: "Dr. Rifayat Ullah Afridi", specialty: "Pediatric Medicine", title: "Consultant Pediatrician", experience: "18+ years", education: "MBBS, FCPS (Pediatrics)", languages: "English, Urdu, Pashto", bio: "Provides preventive and acute medical care for children, ensuring healthy growth and development.", location: "NHS Pediatric Wing, Peshawar", timings: "Mon–Sat, 10AM–5PM", contact: { phone: "+92-301-8765432", email: "dr.rifayat@nhs.pk" }, consultationType: "In-person", proceduresPerformed: "Well-child visits, Immunizations", insuranceAccepted: "Sehat Card, State Life", imageUrl: "https://placehold.co/100x100.png?text=Dr.+Rifayat", aiHint: "pediatrician portrait" },
     { name: "Dr. Javed Ahmad", specialty: "Diagnostic Radiology", title: "Consultant Radiologist", experience: "25+ years", education: "MBBS, FCPS (Radiology)", languages: "English, Urdu", bio: "Uses medical imaging (X-rays, CT, MRI) to diagnose and guide treatment of various conditions.", location: "NHS Diagnostic Imaging, Peshawar", timings: "Mon–Fri, 9AM–5PM", contact: { phone: "+92-302-1234567", email: "dr.javed@nhs.pk" }, consultationType: "Reporting & Consultation", proceduresPerformed: "MRI, CT Scan, Ultrasound, X-Ray", insuranceAccepted: "All Major Insurers", imageUrl: "https://placehold.co/100x100.png?text=Dr.+Javed", aiHint: "radiologist portrait" },
     { name: "Dr. Muhammad Ayaz Khan", specialty: "Orthopedic & Spine Surgery", title: "Consultant Orthopedic & Spine Surgeon", experience: "20+ years", education: "MBBS, FCPS (Ortho)", languages: "English, Urdu", bio: "Treats musculoskeletal injuries and disorders, specializing in spinal surgeries and bone-related conditions.", location: "NHS Orthopedic & Spine Center, Peshawar", timings: "Tue–Sat, 11AM–4PM", contact: { phone: "+92-303-9876543", email: "dr.ayaz@nhs.pk" }, consultationType: "In-person, Surgical", proceduresPerformed: "Spine Surgery, Joint Replacement", insuranceAccepted: "Sehat Card, Private Insurers", imageUrl: "https://placehold.co/100x100.png?text=Dr.+Ayaz", aiHint: "surgeon portrait" },
@@ -92,25 +110,46 @@ export default function OurTeamPage() {
               Our Leadership
             </h2>
           </ScrollFadeIn>
-          <ScrollFadeIn>
-            <div className="max-w-2xl mx-auto bg-card p-8 rounded-xl shadow-2xl flex flex-col md:flex-row items-center gap-8">
-               <Image
-                    src={chairman.imageUrl}
-                    alt={chairman.name}
-                    width={150}
-                    height={150}
-                    className="rounded-full object-cover shadow-md shrink-0 border-4 border-primary"
-                    data-ai-hint={chairman.aiHint}
-                  />
-               <div className="text-center md:text-left">
-                 <h3 className="font-headline text-3xl font-semibold text-primary">{chairman.name}</h3>
-                 <p className="text-accent font-bold text-lg mb-1">{chairman.role}</p>
-                 <p className="text-muted-foreground font-medium mb-3">{chairman.specialty}</p>
-                 <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{chairman.bio}</p>
-                 <Button variant="outline" className="mt-4" onClick={() => setSelectedDoctor(chairman)}>View Profile</Button>
-               </div>
-            </div>
-          </ScrollFadeIn>
+          <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
+            <ScrollFadeIn className="flex-1">
+              <div className="bg-card p-8 rounded-xl shadow-2xl flex flex-col items-center">
+                <Image
+                  src={ceo.imageUrl}
+                  alt={ceo.name}
+                  width={150}
+                  height={150}
+                  className="rounded-full object-cover shadow-md shrink-0 border-4 border-primary"
+                  data-ai-hint={ceo.aiHint}
+                />
+                <div className="text-center mt-4">
+                  <h3 className="font-headline text-3xl font-semibold text-primary">{ceo.name}</h3>
+                  <p className="text-accent font-bold text-lg mb-1">{ceo.role}</p>
+                  <p className="text-muted-foreground font-medium mb-3">{ceo.specialty}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{ceo.bio}</p>
+                  <Button variant="outline" className="mt-4" onClick={() => setSelectedDoctor(ceo)}>View Profile</Button>
+                </div>
+              </div>
+            </ScrollFadeIn>
+            <ScrollFadeIn className="flex-1">
+              <div className="bg-card p-8 rounded-xl shadow-2xl flex flex-col items-center">
+                <Image
+                  src={chairman.imageUrl}
+                  alt={chairman.name}
+                  width={150}
+                  height={150}
+                  className="rounded-full object-cover shadow-md shrink-0 border-4 border-primary"
+                  data-ai-hint={chairman.aiHint}
+                />
+                <div className="text-center mt-4">
+                  <h3 className="font-headline text-3xl font-semibold text-primary">{chairman.name}</h3>
+                  <p className="text-accent font-bold text-lg mb-1">{chairman.role}</p>
+                  <p className="text-muted-foreground font-medium mb-3">{chairman.specialty}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">{chairman.bio}</p>
+                  <Button variant="outline" className="mt-4" onClick={() => setSelectedDoctor(chairman)}>View Profile</Button>
+                </div>
+              </div>
+            </ScrollFadeIn>
+          </div>
         </div>
       </section>
       
@@ -158,6 +197,5 @@ export default function OurTeamPage() {
   );
 }
 
-    
 
-    
+

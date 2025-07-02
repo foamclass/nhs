@@ -10,9 +10,12 @@ export const NAV_LINKS: NavLink[] = [
     key: "about",
     subLinks: [
       { href: "/about", key: "about_us" },
-      { href: "/our-team", key: "our_team" },
       { href: "/project-overview", key: "project_overview" },
     ],
+  },
+  {
+    href: "/our-team",
+    key: "our_team"
   },
   {
     key: "opportunities",
@@ -28,12 +31,8 @@ export const NAV_LINKS: NavLink[] = [
       { href: "/doctor-voices", key: "doctor_voices" },
     ],
   },
-  {
-    key: "contact",
-    subLinks: [
-      { href: "/contact", key: "contact_inquiry" },
-    ],
-  },
+  { href: "/contact", key: "contact" },
+  { href: "/contact?reason=inquiry", key: "contact_inquiry" },
 ];
 
 export const SITE_NAME = "Noble Health Services";

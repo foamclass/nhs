@@ -1,11 +1,9 @@
 "use server";
+import { sendContactEmail } from "./send-email";
 
 // This file contains Server Actions for contact form submissions.
 
 export async function submitInquiry(formData: FormData) {
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500));
-
   const rawFormData = {
     name: formData.get("name"),
     email: formData.get("email"),
@@ -14,13 +12,12 @@ export async function submitInquiry(formData: FormData) {
     message: formData.get("message"),
     newsletter: formData.get("newsletter"),
   };
-  console.log("Inquiry Submitted:", rawFormData);
-  // Here you would typically:
-  // 1. Validate data
-  // 2. Save to Firestore or other database
-  // 3. Trigger email notification (e.g., using a Cloud Function or a service like Resend/SendGrid)
-  
-  // For now, we'll return a success message.
-  // In a real app, you'd handle potential errors and return appropriate responses.
-  return { success: true, message: "Your inquiry has been submitted successfully!" };
+
+  try {
+    await sendContactEmail(rawFormData);
+    return { success: true, message: "Your inquiry has been submitted and emailed successfully!" };
+  } catch (error) {
+    console.error("Email send error:", error);
+    return { success: false, message: "Failed to send email. Please try again later." };
+  }
 }

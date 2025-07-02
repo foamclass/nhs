@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -35,7 +34,6 @@ const navLabels: { [key: string]: string } = {
     knowledge_center: "Knowledge Center",
     doctor_voices: "Doctor Voices",
     contact: "Contact",
-    contact_inquiry: "Contact & Inquiry",
     invest_button: "Interested in Investing?"
 };
 

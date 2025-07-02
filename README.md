@@ -4,7 +4,6 @@ A modern web application for the NHS project, built with Next.js, TypeScript, an
 
 ## Features
 - Responsive design with Tailwind CSS
-- Multi-language support (English, Urdu)
 - Contact form and team profiles
 - Interactive map and FAQ section
 - Theming and dark mode
