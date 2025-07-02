@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -37,9 +36,10 @@ export default function LanguageSwitcher() {
 
   const handleLanguageChange = (newLocale: string) => {
     // The pathname from `usePathname` is the path *without* the locale prefix.
+    const safePathname = typeof pathname === 'string' ? pathname : '/';
     const newPath = newLocale === defaultLocale 
-      ? pathname 
-      : `/${newLocale}${pathname === '/' ? '' : pathname}`;
+      ? safePathname 
+      : `/${newLocale}${safePathname === '/' ? '' : safePathname}`;
       
     router.push(newPath);
   };

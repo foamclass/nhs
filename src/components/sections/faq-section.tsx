@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -36,21 +36,28 @@ const predefinedFaqs = [
 
 // This will be the context provided to the AI.
 // In a real application, this might be dynamically fetched or a more comprehensive summary.
-const WEBSITE_CONTEXT_FOR_AI = `
-Noble Health Services is building a university hospital in Peshawar, KPK, Pakistan.
-The project's goal is to provide world-class healthcare integrated with medical education and research.
-Key features include an integrated, multi-specialty university hospital that combines patient care, academic learning, and research facilities. It is strategically located on Ring Road.
-Investment opportunities include lease, equity, and operations partnerships.
-The project focuses on strong ROI, transformative health impact, and future potential.
-Founding doctors are Dr. Ayesha Khan (Cardiology) and Dr. Usman Ahmed (Oncology).
-The project is designed to serve the large population of KPK and surrounding regions.
-`;
+const WEBSITE_CONTEXT_FOR_AI = undefined; // Will be set dynamically
 
 export default function FaqSection() {
   const [customQuestion, setCustomQuestion] = useState("");
   const [aiAnswer, setAiAnswer] = useState("");
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
+  const [websiteContent, setWebsiteContent] = useState<string>("");
+
+  // Fetch website content from API route on mount
+  useEffect(() => {
+    fetch("/api/website-content")
+      .then((res) => res.json())
+      .then((data) => {
+        // Combine all page content into a single string for context
+        const combined = data.content.map((c: any) => c.content).join("\n\n");
+        setWebsiteContent(combined);
+      })
+      .catch(() => {
+        setWebsiteContent("");
+      });
+  }, []);
 
   const handleCustomQuestionSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -64,7 +71,7 @@ export default function FaqSection() {
       try {
         const input: AnswerInvestorQuestionsInput = {
           question: customQuestion,
-          websiteContent: WEBSITE_CONTEXT_FOR_AI,
+          websiteContent: websiteContent, // Use fetched content
         };
         const result = await answerInvestorQuestions(input);
         setAiAnswer(result.answer);

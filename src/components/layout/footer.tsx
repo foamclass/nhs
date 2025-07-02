@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/constants";
 import { Input } from "@/components/ui/input";
@@ -102,6 +101,10 @@ export default function Footer() {
           <p className="mt-1">
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link> | 
             <Link href="/terms-of-service" className="hover:text-primary transition-colors ml-1">Terms of Service</Link>
+          </p>
+          <p className="mt-2 text-xs text-secondary-foreground/60">
+            Developed by <a href="https://ansar-work.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Ansar Ul Haq</a>
+            {" "}| <a href="mailto:ansarulhaq.dev@gmail.com" className="underline hover:text-primary">ansarulhaq.dev@gmail.com</a>
           </p>
         </div>
       </div>

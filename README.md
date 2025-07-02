@@ -2,6 +2,15 @@
 
 A modern web application for the NHS project, built with Next.js, TypeScript, and Tailwind CSS.
 
+---
+
+> **Developer Info 
+> - Name: Ansar Ul Haq
+> - Email: ansarulhaq.dev@gmail.com
+> - Portfolio: https://ansar-work.vercel.app/
+
+---
+
 ## Features
 - Responsive design with Tailwind CSS
 - Contact form and team profiles
