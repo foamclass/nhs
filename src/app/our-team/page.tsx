@@ -151,7 +151,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "In-person",
     proceduresPerformed: "General Medicine",
     insuranceAccepted: "Sehat Card",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/placeholder.png",
     aiHint: "doctor portrait"
   },
   {
@@ -185,7 +185,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Radiology",
     proceduresPerformed: "MRI, Ultrasound",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Javed.jpg",
     aiHint: "radiologist portrait"
   },
   {
@@ -219,7 +219,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Neurology",
     proceduresPerformed: "Neurological Care",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/placeholder.png",
     aiHint: "neurologist portrait"
   },
   {
@@ -270,7 +270,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Psychiatry",
     proceduresPerformed: "Mental Health Care",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Muhammad Ali.jpg",
     aiHint: "psychiatrist portrait"
   },
   {
@@ -287,7 +287,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "ENT",
     proceduresPerformed: "ENT Procedures",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Ashraf Khan.jpg",
     aiHint: "ent surgeon portrait"
   },
   {
@@ -304,7 +304,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Gastroenterology, Geriatrics",
     proceduresPerformed: "Gastroenterology Procedures",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "/doctors_profiles/Dr shafqat Orakzai.jpg",
+    imageUrl: "/doctors_profiles/Dr Shafqat orakzai.png",
     aiHint: "gastroenterologist portrait"
   },
   {
@@ -338,7 +338,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Hematology",
     proceduresPerformed: "Hematology Procedures",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Inam.jpg",
     aiHint: "hematologist portrait"
   },
   {
@@ -389,7 +389,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Internal Medicine",
     proceduresPerformed: "Internal Medicine Procedures",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Sadeeq Ur rehman.png",
     aiHint: "physician portrait"
   },
   {
@@ -406,7 +406,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Pediatrics",
     proceduresPerformed: "Pediatric Care",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/placeholder.png",
     aiHint: "pediatrician portrait"
   },
   {
@@ -440,7 +440,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Pulmonology",
     proceduresPerformed: "Pulmonology Procedures",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Naeem.jpg",
     aiHint: "pulmonologist portrait"
   },
   {
@@ -474,7 +474,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Gastroenterology",
     proceduresPerformed: "Gastroenterology Procedures",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Muhammad Ijaz.jpg",
     aiHint: "gastroenterologist portrait"
   },
   {
@@ -525,7 +525,7 @@ const specialists: DoctorProfile[] = [
     consultationType: "Rheumatology",
     proceduresPerformed: "Rheumatology Procedures",
     insuranceAccepted: "All Major Insurers",
-    imageUrl: "",
+    imageUrl: "/doctors_profiles/Dr Faqeer Ahmad.jpg",
     aiHint: "rheumatologist portrait"
   }
 ];
@@ -551,15 +551,17 @@ export default function OurTeamPage() {
           <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
             <ScrollFadeIn className="flex-1">
               <div className="bg-card p-8 rounded-xl shadow-2xl flex flex-col items-center">
-                <Image
-                  src={ceo.imageUrl}
-                  alt={ceo.name}
-                  width={150}
-                  height={150}
-                  className="rounded-full object-cover shadow-md shrink-0 border-4 border-primary"
-                  data-ai-hint={ceo.aiHint}
-                  style={{ objectFit: 'cover' }}
-                />
+                <div className="w-[150px] h-[150px] rounded-full overflow-hidden flex items-center justify-center border-4 border-primary shadow-md shrink-0">
+                  <Image
+                    src={ceo.imageUrl}
+                    alt={ceo.name}
+                    width={150}
+                    height={150}
+                    className="object-cover"
+                    data-ai-hint={ceo.aiHint}
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
                 <div className="text-center mt-4">
                   <h3 className="font-headline text-3xl font-semibold text-primary">{ceo.name}</h3>
                   <p className="text-accent font-bold text-lg mb-1">{ceo.role}</p>
@@ -571,15 +573,17 @@ export default function OurTeamPage() {
             </ScrollFadeIn>
             <ScrollFadeIn className="flex-1">
               <div className="bg-card p-8 rounded-xl shadow-2xl flex flex-col items-center">
-                <Image
-                  src={chairman.imageUrl}
-                  alt={chairman.name}
-                  width={150}
-                  height={150}
-                  className="rounded-full object-cover shadow-md shrink-0 border-4 border-primary"
-                  data-ai-hint={chairman.aiHint}
-                  style={{ objectFit: 'cover' }}
-                />
+                <div className="w-[150px] h-[150px] rounded-full overflow-hidden flex items-center justify-center border-4 border-primary shadow-md shrink-0">
+                  <Image
+                    src={chairman.imageUrl}
+                    alt={chairman.name}
+                    width={150}
+                    height={150}
+                    className="object-cover"
+                    data-ai-hint={chairman.aiHint}
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
                 <div className="text-center mt-4">
                   <h3 className="font-headline text-3xl font-semibold text-primary">{chairman.name}</h3>
                   <p className="text-accent font-bold text-lg mb-1">{chairman.role}</p>
@@ -604,15 +608,17 @@ export default function OurTeamPage() {
             {specialists.map((doctor, index) => (
               <ScrollFadeIn key={doctor.name} className="bg-card p-6 rounded-xl shadow-lg flex flex-col" delay={`${(index % 4) * 100}ms`}>
                 <div className="flex flex-col items-center text-center flex-grow">
-                  <Image
-                    src={doctor.imageUrl && doctor.imageUrl.trim() !== "" ? doctor.imageUrl : "/doctors_profiles/placeholder.png"}
-                    alt={doctor.name}
-                    width={100}
-                    height={100}
-                    className="rounded-full object-cover shadow-md shrink-0 mb-4"
-                    data-ai-hint={doctor.aiHint}
-                    style={{ objectFit: 'cover' }}
-                  />
+                  <div className="w-[100px] h-[100px] rounded-full overflow-hidden flex items-center justify-center shadow-md shrink-0 mb-4">
+                    <Image
+                      src={doctor.imageUrl && doctor.imageUrl.trim() !== "" ? doctor.imageUrl : "/doctors_profiles/placeholder.png"}
+                      alt={doctor.name}
+                      width={100}
+                      height={100}
+                      className="object-cover"
+                      data-ai-hint={doctor.aiHint}
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
                   <div className="flex flex-col flex-grow">
                     <h3 className="font-headline text-xl font-semibold text-primary">{doctor.name}</h3>
                     <p className="text-accent font-medium mb-2">{doctor.specialty}</p>
